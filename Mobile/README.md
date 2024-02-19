@@ -1,11 +1,10 @@
----
-title: VIWELL React Native Assessment
----
+# VIWELL React Native Assessment
+
 
 Create a React Native application to list products, show product details
 and maintain wishlist. The app will contain following screens:
 
-####Products Screen
+### Products Screen
 
 It is first bottom tab and will contain the list of products and each product item should show
 
@@ -15,7 +14,7 @@ b.  Title
 
 c.  Price
 
-####Product Detail Screen
+### Product Detail Screen
 
 The user will land on this screen by tapping a product on Products Screen. It should contain a button in the header to add/remove the product to/from Wishlist. It'll also display following attributes of the product:
 
@@ -31,7 +30,7 @@ e.  Brand
 
 f.  Rating
 
-####Wishlist Screen
+### Wishlist Screen
 
 It is the second bottom tab and will show all the items added to the Wishlist. Each item should contain following information/actions.
 
