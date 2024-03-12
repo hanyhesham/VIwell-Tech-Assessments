@@ -6,11 +6,10 @@ Your task is to write automated tests preferably with [Appium](https://appium.io
 
 ## The Process
 
-1. Start a new github repository with detailed "README" document on how to execute the tests.
+1. Start a new github repository with detailed "README" document includes the information about platform, app, tools, frameworks etc and on how to execute the tests.
 1. Download Amazon Shopping Android or App Store Package (APK or IPA)
 1. Write end-to-end tests fulfilling the [Acceptance Criteria](#acceptance-criteria) below.
-1. Publish test execution report in html format.
-1. Prepare a test summary report and include the information about platform, app, tools etc
+1. Publish test execution summary report in html format.
 1. Include all tests related document in same github repository.
 
 - Use below package and activity name (Appium)
@@ -43,21 +42,11 @@ Your task is to write automated tests preferably with [Appium](https://appium.io
   4. Save changes
   5. Assert on selected currency displayed for Deals and Promotions products
 
-- Scenario 4: [Check Product Detail Page image swipe, Payments Option, Pricing, Stock, Add to Cart ]
-
-  1. Tap on the Search bar and search for "Apple"
-  2. Tap the picture of the product and swipe Left to Right
-  3. The price of the product is displayed
-  4. Verify payment options are displayed
-  5. Verify out of stock or in stock, information is showing on the page.
-  6. Tap and verify add to cart feature
-
 ## Bonus Round (not required, but nice-to-have)
 
 - Integration of your tests into a CI pipeline
 - Manual test cases to cover the given scenarios
 - Report any found bugs with associated screenshots
-- BDD integration with any BDD framework (Cucumber, Serenity etc)
 - Surprise us…
 
 ## How we're evaluating the results
@@ -71,4 +60,4 @@ Prioritized from most important to least important, here are our evaluation crit
 
 ## How to submit your work
 
-Create a public repo on Github and push your code on it. then share the link back with the team.
+Create a public repo on Github and push your code on it. then share the link back with us.
