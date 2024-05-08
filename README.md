@@ -5,7 +5,9 @@
 ### Install needed tools:
 
 kubectl: https://kubernetes.io/docs/tasks/tools/
+
 AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
 Terraform: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
 ### Create Remote backend S3 bucket 
