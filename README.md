@@ -23,7 +23,9 @@ Bucket name: hany-terraformstate
 ## Provision the infrastructure
 
 `cd terraform`
+
 `terraform init`
+
 `terraform apply`
 
 ### Connect to K8s cluster after provisioning:
