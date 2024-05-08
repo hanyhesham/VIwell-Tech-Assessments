@@ -14,6 +14,22 @@ module "eks" {
   subnet_ids                               = var.vpc_private_subnets
   enable_cluster_creator_admin_permissions = true
 
+  access_entries = {
+    dev = {
+      kubernetes_group = []
+      principal_arn    = "arn:aws:iam::851725191021:user/github_action"
+
+      policy_associations = {
+        admin = {
+          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+          access_scope = {
+            namespaces = []
+            type       = "cluster"
+          }
+        }
+      }
+    }
+  }
   cluster_addons = {
     coredns = {
       most_recent = true
