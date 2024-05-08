@@ -38,3 +38,23 @@ terraform apply
 ## Update Github secrets
 
 Update Github secrets with IAM access `AWS_ACCESS_KEY_ID` and secret key `AWS_SECRET_ACCESS_KEY` created from the terraform
+
+## Development environment
+
+We are using helm charts for packaing k8s manifests and deploy them to EKS cluster
+
+There are two workflows for each API (airports, countries):
+
+- countries.yaml
+
+- airports.yaml
+
+There are two jobs:
+
+- Build: which build Dockerfile and push it to ECR.
+
+- Deploy: which build helm package and deploy it to it's corresponding namespace (airports, countries).
+
+Pushing to main branch will trigger the pipelines.
+
+## local environment
