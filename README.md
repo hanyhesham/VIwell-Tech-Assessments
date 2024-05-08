@@ -1,11 +1,34 @@
-Prereq:
+# Build Java application on AWS EKS cluster 
 
-Install kubectl and AWS, terraform.
-Create Remote backend S3 bucket and hh-helm-dev bucket for helm
-helm s3 init s3://hh-helm-dev
+## Prerequisites for AWS environment
 
-Access cluster:
+### Install needed tools:
+
+kubectl: https://kubernetes.io/docs/tasks/tools/
+AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+Terraform: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+### Create Remote backend S3 bucket 
+
+Bucket name: hany-terraformstate
+
+### Create Helm repo for helm packages
+
+- Bucket name: hh-helm-dev 
+
+- Init the repo: `helm s3 init s3://hh-helm-dev`
+
+## Provision the infrastructure
+
+`cd terraform`
+`terraform init`
+`terraform apply`
+
+### Connect to K8s cluster after provisioning:
 
 `aws eks --region us-east-2 update-kubeconfig --name dev`
 
-Update Github secrets with IAM access and secret key
+
+## Update Github secrets
+
+Update Github secrets with IAM access and secret key created from the terraform
