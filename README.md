@@ -1,6 +1,8 @@
 Prereq:
 
-Install kubectl and AWS, terraform:
+Install kubectl and AWS, terraform.
+Create Remote backend S3 bucket and hh-helm-dev bucket for helm
+
 
 Access cluster:
 

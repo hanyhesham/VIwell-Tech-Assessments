@@ -1,9 +1,9 @@
 name: countries
 replicaCount: 1
 image:
-  repository: 727245885999.dkr.ecr.us-east-2.amazonaws.com/drone
+  repository: 851725191021.dkr.ecr.us-east-2.amazonaws.com/countries
   pullPolicy: Always
-  tag: "1.0.3_drone"
+  tag: "latest"
 podAnnotations:
   linkerd.io/inject: disabled
 podSecurityContext: {}
@@ -19,10 +19,10 @@ container:
         port: 8080
 autoscaling:
   enabled: true
-  minReplicas: 1
-  maxReplicas: 1
+  minReplicas: 2
+  maxReplicas: 4
   targetCPUUtilizationPercentage: 80
-namespace: "drone"
+namespace: "countries"
 ##for liveness and readiness  
 path: "/health/live"
 port: 8080
