@@ -96,4 +96,4 @@ jobs:
           helm upgrade --install "$CHART_NAME" "$helm_repo/$CHART_NAME" \
           --set "$CHART_NAME".image="$ECR_REGISTRY/$ECR_REPOSITORY:${GITHUB_REF##*/}-$SHORT_SHA" \
           --version="1.0.0-${GITHUB_REF##*/}-$SHORT_SHA" \
-          -f values.yaml -n dev --create-namespace
+          -f values.yaml -n countries --create-namespace
