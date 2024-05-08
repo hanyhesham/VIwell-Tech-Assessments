@@ -37,4 +37,4 @@ terraform apply
 
 ## Update Github secrets
 
-Update Github secrets with IAM access and secret key created from the terraform
+Update Github secrets with IAM access `AWS_ACCESS_KEY_ID` and secret key `AWS_SECRET_ACCESS_KEY` created from the terraform
