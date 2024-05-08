@@ -1,6 +1,6 @@
 # Build Java application on AWS EKS cluster 
 
-## Prerequisites for AWS environment
+## Prerequisites
 
 ### Install needed tools:
 
@@ -9,6 +9,10 @@ kubectl: https://kubernetes.io/docs/tasks/tools/
 AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
 Terraform: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+minikube: https://minikube.sigs.k8s.io/docs/start/
+
+Docker: https://docs.docker.com/engine/install/
 
 ### Create Remote backend S3 bucket 
 
@@ -58,3 +62,35 @@ There are two jobs:
 Pushing to main branch will trigger the pipelines.
 
 ## local environment
+
+We will use Minikube and Docker for local development
+
+To start the cluster: `minikube start`
+
+Before deploy, we need to authenticate to AWS ECS for docker images pull:
+
+```
+minikube addons configure registry-creds
+minikube addons enable registry-creds
+```
+
+To deploy airports API:
+
+```
+cd helm/airports
+helm upgrade --intsall airports -f values.yaml -n airports --create-namespace
+```
+
+To deploy countries API:
+
+```
+cd helm/countries
+helm upgrade --intsall countries -f values.yaml -n countries --create-namespace
+```
+
+To connect locally to the APIs:
+
+```
+kubectl port-forward svc/airports 8000:8000 -n airports
+kubectl port-forward svc/countries 8001:8000 -n countries
+```
