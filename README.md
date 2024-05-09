@@ -61,6 +61,29 @@ There are two jobs:
 
 Pushing to main branch will trigger the pipelines.
 
+## Connecting to APIs
+
+To connect to the APIs from your machine:
+
+```
+kubectl port-forward svc/airports 8000:8000 -n airports
+kubectl port-forward svc/countries 8001:8000 -n countries
+```
+
+## Prevent inter-communication between the two services
+
+To isolate the services from each other, apply the network policy to each namespace:
+
+```
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: default-deny
+spec:
+  podSelector:
+    matchLabels: {}
+```
+
 ## local environment
 
 We will use Minikube and Docker for local development
@@ -86,11 +109,4 @@ To deploy countries API:
 ```
 cd helm/countries
 helm upgrade --intsall countries -f values.yaml -n countries --create-namespace
-```
-
-To connect locally to the APIs:
-
-```
-kubectl port-forward svc/airports 8000:8000 -n airports
-kubectl port-forward svc/countries 8001:8000 -n countries
 ```
