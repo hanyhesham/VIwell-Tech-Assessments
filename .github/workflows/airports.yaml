@@ -85,6 +85,11 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+      - name: Set docker tag
+        working-directory: ./helm/airports
+        run: |-
+          sed -i -e "s/latest/${GITHUB_REF##*/}-$SHORT_SHA/g" values.yaml
+
       - name: Deploy to dev environment
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
