@@ -1,5 +1,9 @@
 # Build Java application on AWS EKS cluster 
 
+## Architecture Design
+
+![Optional Text](img/design.png)
+
 ## Prerequisites
 
 ### Install needed tools:
